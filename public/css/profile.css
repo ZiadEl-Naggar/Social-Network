@@ -1,0 +1,31 @@
+body {
+    color: #797979;
+    background: #f1f2f7;
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 13px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+
+.p-text-area, .p-text-area:focus {
+    border: none;
+    font-weight: 300;
+    box-shadow: none;
+    color: #c3c3c3;
+    font-size: 16px;
+}
+
+.card{
+    height: max-content;
+}
+
+#image
+{
+    display: none;
+}
+
+.editPP { position: relative; }
+.editPP img { display: block; }
+.editPP .fa-file-image { position: absolute;  }
