@@ -59,15 +59,15 @@
                         </a>
                     </li>
                     
-                    <li>
+                    <li class="btn-group nav-item messages mr-1">
                         <a class="nav-link" href="">
-                        <i class="fas fa-envelope messages mr-1"></i>Messages
+                        <i class="fas fa-envelope mr-1"></i>Messages
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
 
-                    <li>
-                        <a class="nav-link" href="">
+                    <li class="btn-group nav-item friends mr-1">
+                        <a class="nav-link" href="{{ url('/friends') }}">
                             <i class="fas fa-user-friends mr-1"></i>Friends
                             <span class="sr-only">(current)</span>
                         </a>
@@ -98,9 +98,7 @@
         </div>
     </nav>
 
-    <main class="py-4">
-        @yield('content')
-    </main>
+    @yield('content')
 
 </body>
 </html>

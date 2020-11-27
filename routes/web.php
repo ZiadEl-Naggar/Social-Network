@@ -36,3 +36,9 @@ Route::post('/comment', [App\Http\Controllers\CommentController::class, 'store']
 Route::post('/deletecomment', [App\Http\Controllers\CommentController::class, 'destroy'])->name('destroy');
 
 Route::post('/react', [App\Http\Controllers\ReactController::class, 'store'])->name('store');
+
+Route::get('/friends', [App\Http\Controllers\FriendController::class, 'show'])->name('show');
+Route::get('/friends/myfriends', [App\Http\Controllers\FriendController::class, 'myfriends'])->name('myfriends');
+Route::get('/friends/received', [App\Http\Controllers\FriendController::class, 'received'])->name('received');
+Route::get('/friends/sent', [App\Http\Controllers\FriendController::class, 'sent'])->name('sent');
+Route::get('/friends/others', [App\Http\Controllers\FriendController::class, 'others'])->name('others');

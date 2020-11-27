@@ -29,3 +29,10 @@ body {
 .editPP { position: relative; }
 .editPP img { display: block; }
 .editPP .fa-file-image { position: absolute;  }
+
+button{
+    outline: 0;
+}
+button:focus {
+    outline: none !important;
+  }

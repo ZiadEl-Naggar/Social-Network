@@ -1,4 +1,7 @@
 @extends('base')
+@section('title')
+<title>Home</title>
+<link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/25/25694.svg"/>
 
 @section('script')
     <script src="{{ asset('js/home.js') }}" defer></script>
@@ -6,7 +9,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pt-2">
         <div class="col-md-8">
             @include('posts/newpost')
 

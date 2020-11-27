@@ -1,5 +1,7 @@
 @extends('base')
-{{-- @section('title', 'Profile') --}}
+@section('title')
+<title>Profile</title>
+<link rel="icon" href="https://cdn2.iconfinder.com/data/icons/user-interface-solid-6/64/User_Interface_Glyph-01-512.png"/>
 
 @section('script')
     <script src="{{ asset('js/profile.js') }}" defer></script>

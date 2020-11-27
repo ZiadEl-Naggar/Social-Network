@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Friend;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,21 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $friends = $user->friends->where('accepted', 1)->toArray();
-        // $friendsId = $friends->map(function ($friend) {
-        //     return collect($friend->toArray())
-        //         ->only(['friend_id'])
-        //         ->all();
-        // })->toArray();
-        // dd($friends[0]['friend_id']);
+        $userid = Auth::user()->id;
+        $list1 = Friend::where('friend_id', $userid)->where('accepted', 1)->pluck('user_id');
+        $list2 = Friend::where('user_id', $userid)->where('accepted', 1)->pluck('friend_id');
+        $posts = Post::whereIn('user_id', $list1)->orWhereIn('user_id', $list2)->orWhere('user_id', $userid)->orderBy('id', 'DESC')->get();
         
-        $friendsId = [];
-        for ($i=0; $i < count($friends); $i++) { 
-            array_push($friendsId, $friends[$i]['friend_id']);
-        }
-        
-        $posts = Post::whereIn('user_id', $friendsId)->get();
 
         return view('home', ['posts'=>$posts]);
     }
